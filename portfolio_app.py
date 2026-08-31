@@ -337,7 +337,6 @@ with st.container():
     st.write(
         "AI Engineer with a strong foundation in MLOps, cloud-native infrastructure automation, and LLM evaluation frameworks. Proven track record deploying scalable systems, including an LLM evaluation pipeline (vLLM, LiteLLM, Opik) that cut model selection time by 50%, and a Kubernetes CI/CD layer that resolved a critical pepr-system mesh crash causing cluster-wide pod admission failure. Adept at bridging advanced machine learning models with robust software engineering to deliver production-ready, data-driven enterprise solutions."
     )
-    st.info("🚧 This portfolio is evolving, check back soon for more!")
 
     st.header("What I Do")
     col1, col2 = st.columns(2)
@@ -367,11 +366,11 @@ with st.container():
     st.header("My Skills")
     st.write(
         """
-        - **AI & LLM:** LangChain, MCP, vLLM, LiteLLM, Opik, ChromaDB, Streamlit, PyTorch, TensorFlow, Scikit-Learn, XGBoost, Pandas
-        - **Cloud & DevOps:** AWS, Google Cloud, Terraform, Docker, Kubernetes, Helm, Tilt, Istio, ArgoCD, GitOps, CI/CD, Zarf, UDS, k3d, mise
-        - **Languages:** Python, Go, SQL, JavaScript, Bash, HTML, CSS
-        - **Backend & Big Data:** FastAPI, REST, gRPC, GraphQL, Protobuf, Flask, Django, Apache Spark, Apache Iceberg, Databricks, lakeFS, MinIO
-        - **Databases, Search & BI:** PostgreSQL, MongoDB, Redis, ElasticSearch, MySQL, OpenSearch, Apache AGE, Tableau, Power BI
+        - **AI & LLM:** PyTorch, Transformers, Hugging Face, vLLM, LiteLLM, LangChain, MCP, Opik, Docling, Scikit-Learn, XGBoost, Pandas
+        - **Cloud & DevOps:** AWS, Google Cloud, Kubernetes, Docker, Terraform, Helm, ArgoCD, GitOps, CI/CD, Istio, Zarf, UDS, k3d, Tilt, mise
+        - **Languages:** Python, Go, SQL, Bash, R, JavaScript, HTML, CSS
+        - **Backend & Big Data:** FastAPI, gRPC, REST, GraphQL, Protobuf, Django, Flask, Apache Spark, Apache Iceberg, Databricks, lakeFS, MinIO
+        - **Databases, Search & BI:** PostgreSQL, Redis, MongoDB, OpenSearch, Elasticsearch, LanceDB, MySQL, Apache AGE, Tableau, Power BI
         - **Certifications:** AWS Certified - AI Practitioner, NVIDIA - Getting Started with Deep Learning
         """
     )
@@ -385,26 +384,49 @@ with st.container():
     st.markdown("""
     <div class="experience-card">
         <div class="card-header">
-            <span class="card-title">Distributed Systems & Software Engineering</span>
-            <span class="card-date">July 2025 – Present</span>
+            <span class="card-title">Data Engineer | Omnidya</span>
+            <span class="card-date">June 2026 – Present</span>
         </div>
-        <div class="card-subtitle">Backend & Infrastructure Development</div>
+        <div class="card-subtitle">Seattle, WA</div>
         <p style="margin-top: 10px; margin-bottom: 0;">
-            • Engineered highly responsive microservices architecture utilizing <b>Go</b>, <b>gRPC</b>, and <b>Protobuf</b> for high-throughput inter-service communication.<br>
-            • Integrated <b>GraphQL API Gateways</b> and distributed storage with <b>PostgreSQL</b> and <b>Elasticsearch</b> for seamless querying and high availability.<br>
-            • Orchestrated containerized environments using <b>Docker</b>, <b>Kubernetes</b>, and <b>GitOps/CI/CD</b> workflows.
+            • Architected a document-extraction pipeline for <b>12k+ insurance filings (150K PDFs)</b>, using Docling, Table Transformer, and RapidOCR to convert PDFs into structured Textract-style JSON with page-level bounding boxes, tables, and confidence scores that fed into a local LanceDB vector store powering hybrid search and company-synthesis RAG, enabling faster analysis and cutting manual review.<br>
+            • Engineered a persistent multiprocessing worker pool with heartbeat monitoring and automatic recovery, replacing a subprocess-per-PDF design to eliminate redundant model reloads and isolate hung or failing documents without stalling the full corpus run.
         </p>
     </div>
     <div class="experience-card">
         <div class="card-header">
-            <span class="card-title">AI & Machine Learning Engineer</span>
-            <span class="card-date">2024 – 2025</span>
+            <span class="card-title">Data Scientist | AXE.AI</span>
+            <span class="card-date">June 2025 – May 2026</span>
         </div>
-        <div class="card-subtitle">Intelligent Systems & Applied ML</div>
+        <div class="card-subtitle">Centreville, VA</div>
         <p style="margin-top: 10px; margin-bottom: 0;">
-            • Developed end-to-end recommendation pipelines and predictive models leveraging <b>PyTorch</b>, <b>TensorFlow</b>, and <b>Scikit-Learn</b>.<br>
-            • Built interactive data-driven applications with <b>Streamlit</b> and <b>FastAPI</b>, enabling real-time inferences and analytics.<br>
-            • Integrated Agentic AI workflows using <b>LangChain</b>, <b>MCP</b>, <b>vLLM</b>, and vector databases like <b>ChromaDB</b>.
+            • Built an LLM evaluation pipeline using <b>vLLM</b>, <b>LiteLLM</b>, and <b>Opik</b> for Elo-style benchmarking, cutting model selection time by <b>50%</b>.<br>
+            • Engineered an MCP-style tool-calling generation agent to parse and index Exegol documentation, achieving <b>98% accuracy</b>, <b>95% command success rate</b>, and <b>50% reduction</b> in manual workflow time.<br>
+            • Engineered an 8-task mise CI/CD layer for a <b>Kubernetes</b> platform (UDS, Zarf, Istio), resolving a critical pepr-system mesh crash that caused cluster-wide pod admission failure.<br>
+            • Architected an airgap bundle packaging 5 <b>Zarf</b> components into a single artifact, reducing dev and prod deployments to a <b>single command</b>.
+        </p>
+    </div>
+    <div class="experience-card">
+        <div class="card-header">
+            <span class="card-title">Software Engineer | SoftSages Technology</span>
+            <span class="card-date">Dec 2023 – May 2024</span>
+        </div>
+        <div class="card-subtitle">Vadodara, Gujarat, India</div>
+        <p style="margin-top: 10px; margin-bottom: 0;">
+            • Implemented text processing pipelines utilizing TF-IDF, Word2Vec, and GloVe vectorization, integrating BERT and GPT-2 transformers to automate text summarization.<br>
+            • Engineered an automated grading module within an education management system, reducing grading time by <b>40%</b> and streamlining educator workflows.<br>
+            • Conducted exploratory data analysis (EDA) on sports datasets to engineer key features, training a Random Forest model that predicted outcomes with <b>83.45% accuracy</b>.
+        </p>
+    </div>
+    <div class="experience-card">
+        <div class="card-header">
+            <span class="card-title">Artificial Intelligence Developer | 1stop.ai</span>
+            <span class="card-date">Nov 2021 – June 2022</span>
+        </div>
+        <div class="card-subtitle">Remote, India</div>
+        <p style="margin-top: 10px; margin-bottom: 0;">
+            • Developed computer vision models for image classification and object recognition using TensorFlow and CNN architectures, optimizing preprocessing pipelines to increase data throughput.<br>
+            • Engineered deep learning classifiers utilizing Scikit-Learn, Pandas, and NumPy, implementing data augmentation techniques that boosted model accuracy and generalized performance.
         </p>
     </div>
     """, unsafe_allow_html=True)
@@ -452,7 +474,7 @@ with st.container():
             where error rate escalated from 0% to 92% past the Knee Point, empirically justifying the entire autoscaling design and threshold
             calibration methodology.
 
-            **Tech Stack:** Go, gRPC, Protobuf, GraphQL, Kafka, Docker, PostgreSQL, Elasticsearch
+            **Tech Stack:** Go, Python, Kubernetes API, vllm-mlx, Prometheus, Docker, kind, Matplotlib
             """
         )
         st.link_button(
@@ -477,7 +499,7 @@ with st.container():
             - Deployed each agent independently on Google Cloud Run with Terraform-managed infrastructure and secrets, Docker containerization,
             and GitHub Actions CI/CD, with structured trace logging correlating each conversation across the distributed agent graph.
 
-            **Tech Stack:** Go, gRPC, Protobuf, GraphQL, Kafka, Docker, PostgreSQL, Elasticsearch
+            **Tech Stack:** Python, LangGraph, FastAPI, RAGAS, ChromaDB, Terraform, Docker, Google Cloud Run
             """
         )
         st.link_button(
@@ -569,6 +591,8 @@ with st.container():
                     st.error("Network error. Please try again later.")
             else:
                 st.warning("Please fill in all fields.")
+
+st.info("🚧 This portfolio is always evolving, check back soon for more!")
 
 # Footer
 with st.container():
