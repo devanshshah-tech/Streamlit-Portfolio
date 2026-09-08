@@ -30,7 +30,7 @@ def apply_theme():
 
     st.markdown(f"""
     <style>
-    html {{
+    html, body, [data-testid="stAppViewContainer"], section.main {{
         scroll-behavior: smooth;
     }}
     header[data-testid="stHeader"] {{
@@ -90,6 +90,41 @@ def apply_theme():
     }}
     .section-anchor {{
         scroll-margin-top: 80px;
+    }}
+    .back-to-top {{
+        position: fixed;
+        bottom: 24px;
+        right: 24px;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: {card_bg};
+        border: 1px solid {border};
+        color: {accent} !important;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 999999;
+        text-decoration: none !important;
+        transition: all 0.25s ease-in-out;
+        cursor: pointer;
+    }}
+    .back-to-top:hover {{
+        background-color: {accent} !important;
+        color: #ffffff !important;
+        border-color: {accent} !important;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(108, 140, 255, 0.45);
+    }}
+    .back-to-top:active {{
+        transform: translateY(0);
+    }}
+    .back-to-top svg {{
+        transition: transform 0.2s ease;
+    }}
+    .back-to-top:hover svg {{
+        transform: translateY(-2px);
     }}
     .experience-card, .education-card {{
         background-color: {card_bg};
@@ -168,6 +203,12 @@ def apply_theme():
         .nav-item {{
             font-size: 12.5px;
             padding: 5px 10px;
+        }}
+        .back-to-top {{
+            bottom: 18px;
+            right: 18px;
+            width: 40px;
+            height: 40px;
         }}
         .hero-text-container p:first-child {{
             font-size: 1.85rem !important;
@@ -285,7 +326,8 @@ with st.sidebar:
         st.markdown(post["content"])
         st.divider()
 
-# Top Navigation Bar (Centered)
+# Top Anchor & Centered Navigation Bar
+st.markdown('<div id="top" style="position: absolute; top: 0; left: 0;"></div>', unsafe_allow_html=True)
 st.markdown("""
 <div class="nav-wrapper">
     <a href="#about" target="_self" class="nav-item">👤 About</a>
@@ -594,7 +636,7 @@ with st.container():
 
 st.info("🚧 This portfolio is always evolving, check back soon for more!")
 
-# Footer
+# Footer & Floating Back-to-Top Button
 with st.container():
     st.divider()
     foot_col1, foot_col2 = st.columns([1, 1], vertical_alignment="center")
@@ -602,7 +644,19 @@ with st.container():
         st.toggle("☀️ Light" if not st.session_state.dark_mode else "🌙 Dark", key="dark_mode")
     with foot_col2:
         st.markdown(
-            "<p style='text-align:right;font-size:14px;color:#9ca3af;margin:0;padding:4px 0;'>"
+            "<p style='text-align:right;font-size:14px;color:#9ca3af;margin:0;padding:4px 55px 4px 0;'>"
             "Built with Streamlit • © 2026 Devansh Shah</p>",
             unsafe_allow_html=True,
         )
+
+st.markdown(
+    """
+    <a href="#top" target="_self" class="back-to-top" title="Back to top" aria-label="Back to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="12" y1="19" x2="12" y2="5"></line>
+            <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+    </a>
+    """,
+    unsafe_allow_html=True,
+)
