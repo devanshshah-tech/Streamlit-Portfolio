@@ -33,12 +33,24 @@ def apply_theme():
     html, body, [data-testid="stAppViewContainer"], section.main {{
         scroll-behavior: smooth;
     }}
-    header[data-testid="stHeader"] {{
-        background: transparent !important;
+    header[data-testid="stHeader"],
+    div[data-testid="stToolbar"],
+    .stAppHeader {{
+        background-color: {bg} !important;
+        pointer-events: none !important;
+    }}
+    header[data-testid="stHeader"] button,
+    header[data-testid="stHeader"] a,
+    header[data-testid="stHeader"] [role="button"],
+    div[data-testid="stToolbar"] button,
+    div[data-testid="stToolbar"] a,
+    div[data-testid="stToolbar"] [role="button"],
+    [data-testid="stExpandSidebarButton"] {{
+        pointer-events: auto !important;
     }}
     .stApp, .main, .block-container {{ background-color: {bg} !important; }}
     .block-container {{
-        padding-top: 2rem !important;
+        padding-top: 4.75rem !important;
         padding-bottom: 2rem !important;
     }}
     h1, h2, h3, h4, h5, h6, p, li, span:not(.st-badge), .stMarkdown, .stText {{
@@ -48,6 +60,8 @@ def apply_theme():
         text-align: center !important;
     }}
     .nav-wrapper {{
+        position: relative;
+        z-index: 1000;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -89,7 +103,13 @@ def apply_theme():
         transform: scale(0.97);
     }}
     .section-anchor {{
-        scroll-margin-top: 80px;
+        display: block;
+        position: relative;
+        scroll-margin-top: 64px;
+        visibility: hidden;
+        height: 0;
+        margin: 0;
+        padding: 0;
     }}
     .back-to-top {{
         position: fixed;
@@ -192,7 +212,7 @@ def apply_theme():
     }}
     @media (max-width: 768px) {{
         .block-container {{
-            padding-top: 1.5rem !important;
+            padding-top: 4.5rem !important;
             padding-left: 0.8rem !important;
             padding-right: 0.8rem !important;
         }}
@@ -327,8 +347,8 @@ with st.sidebar:
         st.divider()
 
 # Top Anchor & Centered Navigation Bar
-st.markdown('<div id="top" style="position: absolute; top: 0; left: 0;"></div>', unsafe_allow_html=True)
 st.markdown("""
+<div id="top" class="section-anchor" style="scroll-margin-top: 100px;"></div>
 <div class="nav-wrapper">
     <a href="#about" target="_self" class="nav-item">👤 About</a>
     <a href="#skills" target="_self" class="nav-item">⚡ Skills</a>
@@ -372,9 +392,9 @@ with st.container():
             )
 
 # About Section
-st.markdown('<div id="about" class="section-anchor"></div>', unsafe_allow_html=True)
 with st.container():
     st.divider()
+    st.markdown('<div id="about" class="section-anchor"></div>', unsafe_allow_html=True)
     st.subheader("Hi, I am Devansh 👋")
     st.write(
         "AI Engineer with a strong foundation in MLOps, cloud-native infrastructure automation, and LLM evaluation frameworks. Proven track record deploying scalable systems, including an LLM evaluation pipeline (vLLM, LiteLLM, Opik) that cut model selection time by 50%, and a Kubernetes CI/CD layer that resolved a critical pepr-system mesh crash causing cluster-wide pod admission failure. Adept at bridging advanced machine learning models with robust software engineering to deliver production-ready, data-driven enterprise solutions."
@@ -402,9 +422,9 @@ with st.container():
         )
 
 # Skills Section
-st.markdown('<div id="skills" class="section-anchor"></div>', unsafe_allow_html=True)
 with st.container():
     st.divider()
+    st.markdown('<div id="skills" class="section-anchor"></div>', unsafe_allow_html=True)
     st.header("My Skills")
     st.write(
         """
@@ -418,9 +438,9 @@ with st.container():
     )
 
 # Experience Section
-st.markdown('<div id="experience" class="section-anchor"></div>', unsafe_allow_html=True)
 with st.container():
     st.divider()
+    st.markdown('<div id="experience" class="section-anchor"></div>', unsafe_allow_html=True)
     st.header("Experience")
 
     st.markdown("""
@@ -474,9 +494,9 @@ with st.container():
     """, unsafe_allow_html=True)
 
 # Projects Section
-st.markdown('<div id="projects" class="section-anchor"></div>', unsafe_allow_html=True)
 with st.container():
     st.divider()
+    st.markdown('<div id="projects" class="section-anchor"></div>', unsafe_allow_html=True)
     st.header("My Projects")
     image_column, text_column = st.columns((1, 2))
     with image_column:
@@ -572,9 +592,9 @@ with st.container():
         )
 
 # Education Section
-st.markdown('<div id="education" class="section-anchor"></div>', unsafe_allow_html=True)
 with st.container():
     st.divider()
+    st.markdown('<div id="education" class="section-anchor"></div>', unsafe_allow_html=True)
     st.header("Education")
 
     st.markdown("""
@@ -601,9 +621,9 @@ with st.container():
     """, unsafe_allow_html=True)
 
 # Contact Section
-st.markdown('<div id="contact" class="section-anchor"></div>', unsafe_allow_html=True)
 with st.container():
     st.divider()
+    st.markdown('<div id="contact" class="section-anchor"></div>', unsafe_allow_html=True)
     st.header("Get In Touch!")
     st.write(
         "I'd love to hear from you! Whether you have a question, want to collaborate, "
