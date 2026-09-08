@@ -93,7 +93,7 @@ def apply_theme():
     }}
     .back-to-top {{
         position: fixed;
-        bottom: 24px;
+        bottom: 76px;
         right: 24px;
         width: 44px;
         height: 44px;
@@ -205,10 +205,10 @@ def apply_theme():
             padding: 5px 10px;
         }}
         .back-to-top {{
-            bottom: 18px;
+            bottom: 72px;
             right: 18px;
-            width: 40px;
-            height: 40px;
+            width: 42px;
+            height: 42px;
         }}
         .hero-text-container p:first-child {{
             font-size: 1.85rem !important;
