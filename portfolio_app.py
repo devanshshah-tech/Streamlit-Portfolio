@@ -307,7 +307,7 @@ project_image_2 = load_image("img/RhoScale.jpg")
 project_image_3 = load_image("img/RelayAgent.jpg")
 project_image_4 = load_image("img/Orderly.jpg")
 
-RESUME_URL = "https://www.dropbox.com/scl/fi/j7i6kpgzeffz6vj0gyjo9/Devansh-Shah-Resume.pdf?rlkey=5ivofne11jbc6tk357h2fvezw&dl=0"
+RESUME_URL = "https://www.dropbox.com/scl/fi/ei5yi9uh42pi9i32a6fty/Devanshu-Shah-Resume.pdf?rlkey=fp09hlsbgclx0nsakl3o0g46r&dl=0"
 
 def load_blog_posts():
     posts = []
