@@ -372,7 +372,7 @@ with st.container():
             <div class="hero-text-container" style="text-align: center !important; width: 100%;">
                 <p style="font-size: 2.3rem; font-weight: 700; margin: 0 auto 0.2rem auto; text-align: center !important; line-height: 1.2;">Devanshu Shah</p>
                 <p style="font-size: 1.05rem; margin: 0 auto 0.2rem auto; text-align: center !important;">📧 <a href="mailto:devansh.shah.tech@gmail.com" style="text-decoration: none; color: inherit;">devansh.shah.tech@gmail.com</a></p>
-                <p style="font-size: 1.15rem; font-weight: 500; margin: 0 auto 1rem auto; text-align: center !important;">AI Infrastructure & Platform Engineer</p>
+                <p style="font-size: 1.15rem; font-weight: 500; margin: 0 auto 1rem auto; text-align: center !important;">Software Engineer · AI Infrastructure & Data Systems</p>
             </div>
             """,
             unsafe_allow_html=True,
@@ -451,8 +451,12 @@ with st.container():
         </div>
         <div class="card-subtitle">Seattle, WA</div>
         <p style="margin-top: 10px; margin-bottom: 0;">
-            • Architected a document-extraction pipeline for <b>12k+ insurance filings (150K PDFs)</b>, using Docling, Table Transformer, and RapidOCR to convert PDFs into structured Textract-style JSON with page-level bounding boxes, tables, and confidence scores that fed into a local LanceDB vector store powering hybrid search and company-synthesis RAG, enabling faster analysis and cutting manual review.<br>
-            • Engineered a persistent multiprocessing worker pool with heartbeat monitoring and automatic recovery, replacing a subprocess-per-PDF design to eliminate redundant model reloads and isolate hung or failing documents without stalling the full corpus run.
+            • Architected a document-extraction pipeline for 12K+ insurance filings (150K PDFs), powering hybrid search and RAG-based company
+            analysis in a local LanceDB vector store. Integrated Docling, Table Transformer, and RapidOCR to produce Textract-style JSON with
+            page-level bounding boxes, tables, and confidence scores, reducing manual document review.<br>
+            • Engineered a fault-tolerant multiprocessing worker pool, replacing per-PDF subprocesses with persistent workers to eliminate repeated
+            model loading. Added heartbeat monitoring, failure isolation, and automatic recovery to prevent stalled or failed PDFs from blocking
+            corpus-wide processing.<br>
         </p>
     </div>
     <div class="experience-card">
@@ -462,10 +466,13 @@ with st.container():
         </div>
         <div class="card-subtitle">Centreville, VA</div>
         <p style="margin-top: 10px; margin-bottom: 0;">
-            • Built an LLM evaluation pipeline using <b>vLLM</b>, <b>LiteLLM</b>, and <b>Opik</b> for Elo-style benchmarking, cutting model selection time by <b>50%</b>.<br>
-            • Engineered an MCP-style tool-calling generation agent to parse and index Exegol documentation, achieving <b>98% accuracy</b>, <b>95% command success rate</b>, and <b>50% reduction</b> in manual workflow time.<br>
-            • Engineered an 8-task mise CI/CD layer for a <b>Kubernetes</b> platform (UDS, Zarf, Istio), resolving a critical pepr-system mesh crash that caused cluster-wide pod admission failure.<br>
-            • Architected an airgap bundle packaging 5 <b>Zarf</b> components into a single artifact, reducing dev and prod deployments to a <b>single command</b>.
+            • Built a cybersecurity-focused LLM evaluation pipeline using vLLM, LiteLLM, and Opik, comparing models through pairwise rankings and
+            rubric-based scoring of tool selection, command correctness, and documentation grounding.<br>
+            • Evaluated an Exegol documentation agent using task-based test cases, separating retrieval failures, unsupported command options, and
+            incorrect tool selection to guide prompt and retrieval improvements.<br>
+            • Automated 8 CI/CD tasks with mise for a Kubernetes platform (UDS, Zarf, Istio), resolving a critical pepr-system mesh crash that caused
+            cluster-wide pod admission failure.<br>
+            • Consolidated 5 Zarf components into a single airgap bundle, simplifying development and production deployments to a single command.<br>
         </p>
     </div>
     <div class="experience-card">
@@ -506,9 +513,12 @@ with st.container():
         st.write(
             """
             *June - Aug 2026*
-            - Designed and engineered an offline-first RAG microservice platform (FastAPI, Go gRPC, pgvector, lakeFS-versioned corpus) powered by CPU-quantized local LLM inference, eliminating external API dependencies for fully airgapped operation.
-            - Engineered zero-trust service mesh security with Istio enforcing strict mTLS, traffic policies, and egress isolation across all internal hops, managed via declarative ArgoCD GitOps and Terraform infrastructure as code.
-            - Packaged the platform into dual-arch Zarf/UDS airgap bundles (≤2GiB) for one-command offline deployment, while operating a $0-cost live public demo via k3s and Cloudflare Tunnel to validate dual delivery modes.
+            - Created an offline-first RAG microservice platform (FastAPI, Go gRPC, pgvector, lakeFS-versioned corpus) powered by CPU-quantized
+            local LLM inference, eliminating external API dependencies for fully airgapped operation.
+            - Enforced zero-trust service mesh security with Istio through strict mTLS, traffic policies, and egress isolation across all internal hops,
+            managed via declarative ArgoCD GitOps and Terraform infrastructure as code.
+            - Packaged the platform into dual-arch Zarf/UDS airgap bundles (≤2 GiB) for one-command offline deployment, while operating a $0-cost
+            live public demo via k3s and Cloudflare Tunnel to validate dual delivery modes.
 
             **Tech Stack:** Go, Python (FastAPI), gRPC, Protobuf, GraphQL, PostgreSQL (pgvector), Istio, Kubernetes, Helm, ArgoCD, Terraform, Zarf/UDS, Ollama, lakeFS, Docker
             """
@@ -526,15 +536,14 @@ with st.container():
             """
             *Mar - June 2026*
 
-            - Designed and implemented a Kubernetes autoscaler in Go (MAPE-K control loop, client-go) that replaces CPU-based HPA with a
-            queue-depth signal grounded in G/G/1 queueing theory, using Little’s Law (L= λW) to estimate real-time latency degradation from live
-            Prometheus metrics without instrumenting individual requests.
-            - Empirically calibrated a proportional scaling threshold via Knee Point analysis (second-derivative slope detection) and validated the
-            controller reacting 10x faster than standard HPA (4s vs. 40s across 4 scaling events), using a trace-driven replay methodology purpose
-            built to eliminate workload confounds by evaluating both algorithms against identical real inference traffic.
+            - Implemented a Kubernetes autoscaler in Go (MAPE-K control loop, client-go) that replaces CPU-based HPA with a queue-depth signal
+            grounded in G/G/1 queueing theory, applying Little's Law (L= λW) to estimate real-time latency degradation from live Prometheus
+            metrics without instrumenting individual requests.
+            - Calibrated a proportional scaling threshold via Knee Point analysis (second-derivative slope detection) and validated the controller reacting
+            10x faster than standard HPA (4s vs. 40s across 4 scaling events), through a trace-driven replay methodology that compared both
+            algorithms against identical real inference traffic to control for workload differences.
             - Stress-tested the system under Poisson-distributed traffic across 6 arrival-rate regimes (λ= 1–26 req/s), quantifying a stability boundary
-            where error rate escalated from 0% to 92% past the Knee Point, empirically justifying the entire autoscaling design and threshold
-            calibration methodology.
+            where error rate escalated from 0% to 92% past the Knee Point, identifying the overload boundary to inform autoscaling decisions.
 
             **Tech Stack:** Go, Python, Kubernetes API, vllm-mlx, Prometheus, Docker, kind, Matplotlib
             """
