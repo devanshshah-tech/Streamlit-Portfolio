@@ -7,7 +7,7 @@ from io import BytesIO
 from pathlib import Path
 
 st.set_page_config(
-    page_title="Devansh Shah",
+    page_title="Devanshu Shah",
     page_icon="🤖",
     layout="wide",
     initial_sidebar_state="collapsed",
@@ -304,7 +304,7 @@ def load_image(path_or_url, fallback_size=(300, 300), fallback_color=(52, 152, 2
 profile_pic = load_image("img/profile.jpeg")
 project_image_1 = load_image("img/BulkHead.jpg")
 project_image_2 = load_image("img/RhoScale.jpg")
-project_image_3 = load_image("img/RelayAgent.jpg")
+project_image_3 = load_image("img/CaseWork.jpg")
 project_image_4 = load_image("img/Orderly.jpg")
 
 RESUME_URL = "https://www.dropbox.com/scl/fi/ei5yi9uh42pi9i32a6fty/Devanshu-Shah-Resume.pdf?rlkey=fp09hlsbgclx0nsakl3o0g46r&dl=0"
@@ -370,7 +370,7 @@ with st.container():
         st.markdown(
             """
             <div class="hero-text-container" style="text-align: center !important; width: 100%;">
-                <p style="font-size: 2.3rem; font-weight: 700; margin: 0 auto 0.2rem auto; text-align: center !important; line-height: 1.2;">Devansh Shah</p>
+                <p style="font-size: 2.3rem; font-weight: 700; margin: 0 auto 0.2rem auto; text-align: center !important; line-height: 1.2;">Devanshu Shah</p>
                 <p style="font-size: 1.05rem; margin: 0 auto 0.2rem auto; text-align: center !important;">📧 <a href="mailto:devansh.shah.tech@gmail.com" style="text-decoration: none; color: inherit;">devansh.shah.tech@gmail.com</a></p>
                 <p style="font-size: 1.15rem; font-weight: 500; margin: 0 auto 1rem auto; text-align: center !important;">AI Infrastructure & Platform Engineer</p>
             </div>
@@ -395,9 +395,9 @@ with st.container():
 with st.container():
     st.divider()
     st.markdown('<div id="about" class="section-anchor"></div>', unsafe_allow_html=True)
-    st.subheader("Hi, I am Devansh 👋")
+    st.subheader("Hi, I am Devanshu 👋")
     st.write(
-        "AI Engineer with a strong foundation in MLOps, cloud-native infrastructure automation, and LLM evaluation frameworks. Proven track record deploying scalable systems, including an LLM evaluation pipeline (vLLM, LiteLLM, Opik) that cut model selection time by 50%, and a Kubernetes CI/CD layer that resolved a critical pepr-system mesh crash causing cluster-wide pod admission failure. Adept at bridging advanced machine learning models with robust software engineering to deliver production-ready, data-driven enterprise solutions."
+        "AI Engineer specializing in LLM evaluation, document intelligence, and MLOps, with hands-on experience building extraction pipelines for 150K PDFs, fault-tolerant multiprocessing, and hybrid search for insurance analysis. Skilled in Python, Go, and Kubernetes, with projects spanning airgap-deployable RAG systems, local LLM inference, and secure service communication."
     )
 
     st.header("What I Do")
@@ -549,23 +549,22 @@ with st.container():
     with image_column:
         st.image(project_image_3, width="stretch")
     with text_column:
-        st.subheader("Enterprise AI Agent Platform")
+        st.subheader("Agentic Incident Triage")
         st.write(
             """
             *Jan - Mar 2026*
 
-            - Designed a hierarchical multi-agent system (supervisor agent routing to search, summarization, and code-execution sub-agents) using a
-            ReAct architecture, with each agent as its own microservice and conversation-ID propagation across service boundaries for observability.
-            - Built and evaluated a RAG pipeline with sentence-window and parent-document chunking strategies against a ChromaDB knowledge base,
-            measuring faithfulness/hallucination rate across strategies to select the retrieval configuration with the best precision-context tradeoff.
-            - Deployed each agent independently on Google Cloud Run with Terraform-managed infrastructure and secrets, Docker containerization,
-            and GitHub Actions CI/CD, with structured trace logging correlating each conversation across the distributed agent graph.
-
-            **Tech Stack:** Python, LangGraph, FastAPI, RAGAS, ChromaDB, Terraform, Docker, Google Cloud Run
+            - Established a specification-first coding-agent workflow using AGENTS.md, acceptance-linked plans, and a reusable review skill;
+             Delegated focused reviews to coding subagents, with completion hooks running checks before changes entered CI.
+            - Orchestrated incident triage with LangGraph and Pydantic-validated schemas, passing bounded incident packets between investigator and
+            reviewer roles; checked supporting event references and limited revisions before presenting findings for human review.
+            - Embedded trajectory review into agent-assisted GitHub Actions workflows, turning diagnosed failures into candidate patches and
+            regression tests; compared investigator-only and reviewer-assisted runs on decision quality, latency, and token cost, with bounded repair
+            attempts and human-reviewed changes.
             """
         )
         st.link_button(
-            "View on GitHub", "https://github.com/devanshshah-tech/RelayAgent"
+            "View on GitHub", "https://github.com/devanshshah-tech/CaseWork"
         )
 
     st.divider()
@@ -665,7 +664,7 @@ with st.container():
     with foot_col2:
         st.markdown(
             "<p style='text-align:right;font-size:14px;color:#9ca3af;margin:0;padding:4px 55px 4px 0;'>"
-            "Built with Streamlit • © 2026 Devansh Shah</p>",
+            "Built with Streamlit • © 2026 Devanshu Shah</p>",
             unsafe_allow_html=True,
         )
 
