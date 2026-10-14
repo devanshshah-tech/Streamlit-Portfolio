@@ -433,7 +433,8 @@ with st.container():
         - **Languages:** Python, Go, SQL, Bash, R, JavaScript, HTML, CSS
         - **Backend & Big Data:** FastAPI, gRPC, REST, GraphQL, Protobuf, Django, Flask, Apache Spark, Apache Iceberg, Databricks, lakeFS, MinIO
         - **Databases, Search & BI:** PostgreSQL, Redis, MongoDB, OpenSearch, Elasticsearch, LanceDB, MySQL, Apache AGE, Tableau, Power BI
-        - **Certifications:** AWS Certified - AI Practitioner, NVIDIA - Getting Started with Deep Learning
+        - **Certifications:** AWS Certified - AI Practitioner, NVIDIA - Getting Started with Deep Learning, Salesforce Trailhead - Developer Training
+        - **Societies:** NC State - Data Science and AI Academy, Quantitative Finance Club, Shutterbugs Photography Club
         """
     )
 
@@ -449,7 +450,7 @@ with st.container():
             <span class="card-title">Data Engineer | Omnidya</span>
             <span class="card-date">June 2026 – Present</span>
         </div>
-        <div class="card-subtitle">Seattle, WA</div>
+        <div class="card-subtitle">Seattle, Washington, US</div>
         <p style="margin-top: 10px; margin-bottom: 0;">
             • Architected a document-extraction pipeline for 12K+ insurance filings (150K PDFs), powering hybrid search and RAG-based company
             analysis in a local LanceDB vector store. Integrated Docling, Table Transformer, and RapidOCR to produce Textract-style JSON with
@@ -464,7 +465,7 @@ with st.container():
             <span class="card-title">Data Scientist | AXE.AI</span>
             <span class="card-date">June 2025 – May 2026</span>
         </div>
-        <div class="card-subtitle">Centreville, VA</div>
+        <div class="card-subtitle">Centreville, Virginia, US</div>
         <p style="margin-top: 10px; margin-bottom: 0;">
             • Built a cybersecurity-focused LLM evaluation pipeline using vLLM, LiteLLM, and Opik, comparing models through pairwise rankings and
             rubric-based scoring of tool selection, command correctness, and documentation grounding.<br>
@@ -512,7 +513,7 @@ with st.container():
         st.subheader("Airgap-Deployable RAG Platform")
         st.write(
             """
-            *June - Aug 2026*
+            *Aug - Oct 2026*
             - Created an offline-first RAG microservice platform (FastAPI, Go gRPC, pgvector, lakeFS-versioned corpus) powered by CPU-quantized
             local LLM inference, eliminating external API dependencies for fully airgapped operation.
             - Enforced zero-trust service mesh security with Istio through strict mTLS, traffic policies, and egress isolation across all internal hops,
@@ -534,7 +535,7 @@ with st.container():
         st.subheader("Queue-Aware Kubernetes Autoscaler for LLM Inference")
         st.write(
             """
-            *Mar - June 2026*
+            *May - Aug 2026*
 
             - Implemented a Kubernetes autoscaler in Go (MAPE-K control loop, client-go) that replaces CPU-based HPA with a queue-depth signal
             grounded in G/G/1 queueing theory, applying Little's Law (L= λW) to estimate real-time latency degradation from live Prometheus
@@ -561,7 +562,7 @@ with st.container():
         st.subheader("Agentic Incident Triage")
         st.write(
             """
-            *Jan - Mar 2026*
+            *Mar - May 2026*
 
             - Established a specification-first coding-agent workflow using AGENTS.md, acceptance-linked plans, and a reusable review skill;
              Delegated focused reviews to coding subagents, with completion hooks running checks before changes entered CI.
@@ -585,7 +586,7 @@ with st.container():
         st.subheader("Microservices E-Commerce Platform")
         st.write(
             """
-            *Oct - Dec 2025*
+            *Jan - Mar 2026*
 
             - Built a microservices architecture in Go (Account, Catalog, Order services) with gRPC/Protobuf for inter-service communication and a GraphQL API gateway composing calls across services into unified client queries, backed by PostgreSQL and Elasticsearch.
             - Implemented the saga pattern for order-creation consistency across services, using the outbox pattern (atomic local write of state change plus event, relayed to the message broker) to reliably drive each saga step; added circuit breakers and bounded retries on inter-service calls to prevent cascading failure when a dependency degrades.
